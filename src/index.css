@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a2a3a 0%, #0f1b28 100%);
+  min-height: 100vh;
+  color: #e0e0e0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #2a7dd7;
+  --secondary-color: #1a5ca5;
+  --accent-color: #4da6d6;
+  --success-color: #06d6a0;
+  --danger-color: #ef476f;
+  --warning-color: #ffd166;
+  --text-dark: #f0f0f0;
+  --text-light: #b0b0b0;
+  --bg-light: #1f3a52;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

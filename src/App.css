@@ -1,0 +1,253 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #1a2a3a 0%, #0f1b28 100%);
+  color: #f0f0f0;
+  padding: 0;
+  min-height: auto;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
+  background: rgba(10, 20, 35, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(42, 125, 215, 0.2);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 40px;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.hero-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #f0f0f0;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  opacity: 0.85;
+  color: #b0b0b0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background: var(--primary-color);
+  color: #f0f0f0;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(42, 125, 215, 0.4);
+  background: transparent;
+  color: var(--primary-color);
+}
+
+.hero-animation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animated-car {
+  font-size: 120px;
+  animation: drive 8s ease-in-out infinite;
+}
+
+/* Footer */
+.app-footer {
+  background: linear-gradient(135deg, rgba(26, 42, 58, 0.9), rgba(15, 27, 40, 0.9));
+  color: #b0b0b0;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: auto;
+  border-top: 1px solid rgba(42, 125, 215, 0.2);
+  font-size: 1rem;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes drive {
+  0%, 100% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-animation {
+    margin-top: 40px;
+  }
+
+  .animated-car {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .animated-car {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 15px 10px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 0.95rem;
+  }
+
+  .animated-car {
+    font-size: 50px;
+  }
+}
